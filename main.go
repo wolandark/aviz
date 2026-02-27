@@ -126,6 +126,7 @@ func main() {
 	}()
 
 	showHelp := false
+	paused := false
 	showAudioErr := audioErr != ""
 	audioErrTimeout := time.Now().Add(5 * time.Second)
 	running := true
@@ -187,6 +188,8 @@ func main() {
 						if cfg.Visual.Smoothing > 0.95 {
 							cfg.Visual.Smoothing = 0.1
 						}
+					case ' ':
+						paused = !paused
 					case '?', 'h', 'H':
 						showHelp = !showHelp
 					case '[':
@@ -206,6 +209,15 @@ func main() {
 			}
 
 		case <-ticker.C:
+			if paused {
+				w, h := screen.Size()
+				if w >= 2 && h >= 2 {
+					drawNotification(screen, w, h, "▌▌ PAUSED", tcell.NewRGBColor(200, 200, 200))
+					screen.Show()
+				}
+				continue
+			}
+
 			samples := audio.Read()
 
 			w, h := screen.Size()
@@ -314,6 +326,7 @@ func drawHelpOverlay(screen tcell.Screen, w, h int) {
 		"║   p       Toggle peak indicators             ║",
 		"║   s       Cycle smoothing level              ║",
 		"║   [ / ]   Adjust bar width                   ║",
+		"║   SPACE   Pause / Resume                     ║",
 		"║                                              ║",
 		"║   ?/h     Toggle this help                   ║",
 		"║   q/ESC   Quit                               ║",
