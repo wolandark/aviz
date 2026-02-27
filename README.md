@@ -1,4 +1,4 @@
-# audiovis
+# aviz
 
 terminal audio visualizer. captures system audio and draws stuff.
 
@@ -7,15 +7,15 @@ terminal audio visualizer. captures system audio and draws stuff.
 need go and pulseaudio/pipewire-pulse (parec).
 
 ```
-go build -o audiovis .
+go build -o aviz .
 ```
 
 ## usage
 
 ```
-./audiovis              # captures system audio
-./audiovis --demo       # fake audio, no setup needed
-./audiovis --style fire --colors neon
+./aviz              # captures system audio
+./aviz --demo       # fake audio, no setup needed
+./aviz --style fire --colors neon
 ```
 
 ## keys
@@ -35,7 +35,7 @@ q / esc   quit
 
 ## config
 
-optional. put it at `~/.config/audiovis/config.yaml` or don't.
+optional. put it at `~/.config/aviz/config.yaml` or don't.
 
 ```yaml
 style: bars

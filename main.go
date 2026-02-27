@@ -24,15 +24,15 @@ func main() {
 
 	if *listStyles {
 		fmt.Println("╔══════════════════════════════════════════╗")
-		fmt.Println("║          AUDIOVIS - Terminal Audio        ║")
+		fmt.Println("║          AUDIOVIS - Terminal Audio       ║")
 		fmt.Println("║              Visualizer                  ║")
 		fmt.Println("╠══════════════════════════════════════════╣")
 		fmt.Println("║  Visualization Styles:                   ║")
-		fmt.Println("║    bars     - Classic frequency bars      ║")
-		fmt.Println("║    wave     - Oscilloscope waveform       ║")
-		fmt.Println("║    spectrum - Smooth spectrum curve       ║")
-		fmt.Println("║    circle   - Radial visualizer           ║")
-		fmt.Println("║    fire     - Flame effect                ║")
+		fmt.Println("║    bars     - Classic frequency bars     ║")
+		fmt.Println("║    wave     - Oscilloscope waveform      ║")
+		fmt.Println("║    spectrum - Smooth spectrum curve      ║")
+		fmt.Println("║    circle   - Radial visualizer          ║")
+		fmt.Println("║    fire     - Flame effect               ║")
 		fmt.Println("║                                          ║")
 		fmt.Println("║  Color Schemes:                          ║")
 		for _, name := range AllSchemeNames() {
@@ -303,23 +303,23 @@ func drawStatusBar(screen tcell.Screen, w, h int, styleName, colorName string, c
 func drawHelpOverlay(screen tcell.Screen, w, h int) {
 	lines := []string{
 		"╔══════════════════════════════════════════════╗",
-		"║           AUDIOVIS  ─  CONTROLS             ║",
+		"║           AUDIOVIS  ─  CONTROLS              ║",
 		"╠══════════════════════════════════════════════╣",
-		"║                                             ║",
-		"║   1-5     Switch visualization style        ║",
-		"║   n       Next visualization                ║",
-		"║   c / C   Next / Previous color scheme      ║",
-		"║   + / -   Adjust sensitivity                ║",
-		"║   m       Toggle mirror mode                ║",
-		"║   p       Toggle peak indicators            ║",
-		"║   s       Cycle smoothing level             ║",
-		"║   [ / ]   Adjust bar width                  ║",
-		"║                                             ║",
-		"║   ?/h     Toggle this help                  ║",
-		"║   q/ESC   Quit                              ║",
-		"║                                             ║",
+		"║                                              ║",
+		"║   1-5     Switch visualization style         ║",
+		"║   n       Next visualization                 ║",
+		"║   c / C   Next / Previous color scheme       ║",
+		"║   + / -   Adjust sensitivity                 ║",
+		"║   m       Toggle mirror mode                 ║",
+		"║   p       Toggle peak indicators             ║",
+		"║   s       Cycle smoothing level              ║",
+		"║   [ / ]   Adjust bar width                   ║",
+		"║                                              ║",
+		"║   ?/h     Toggle this help                   ║",
+		"║   q/ESC   Quit                               ║",
+		"║                                              ║",
 		"║   Styles: bars wave spectrum circle fire     ║",
-		"║                                             ║",
+		"║                                              ║",
 		"╚══════════════════════════════════════════════╝",
 	}
 
