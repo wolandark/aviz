@@ -2,6 +2,8 @@
 
 terminal audio visualizer. captures system audio and draws stuff.
 
+https://github.com/user-attachments/assets/84d51327-eda5-44fb-a93e-8a1a10dfb47c
+
 ## install
 
 need go and pulseaudio/pipewire-pulse (parec).
